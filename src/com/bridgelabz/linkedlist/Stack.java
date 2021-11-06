@@ -3,10 +3,6 @@ package com.bridgelabz.linkedlist;
 import com.bridgelabz.linkedlist.*;
 
 public class Stack {
-	/*
-	 * To create stack operations
-	 */
-
 	private MyLinkedList myLinkedList;
 
 	/*
@@ -24,9 +20,6 @@ public class Stack {
 
 	}
 
-	/*
-	 * used to peak
-	 */
 	public INode peak() {
 		return myLinkedList.head;
 	}
@@ -35,12 +28,8 @@ public class Stack {
 		myLinkedList.printNodes();
 	}
 
-	public INode pop() {
-		return myLinkedList.pop();
-	}
-
-	public boolean isEmpty() {
-		return myLinkedList.head == null;
+	public void enqueu(INode myNode) {
+		myLinkedList.append(myNode);
 	}
 
 }

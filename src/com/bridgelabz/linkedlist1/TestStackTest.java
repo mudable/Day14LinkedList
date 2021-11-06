@@ -20,19 +20,16 @@ class TestStackTest {
 	        Assert.assertEquals(myThirdNode , peak);
 	    }
 	    @Test
-	    public void given3NumbersInStackWhenPopedTillEmptyShouldReturnTrue(){
-	        MyNode<Integer>  myFirstNode = new MyNode(70);
+	    public void given3NumbersWhenAddedToStackShouldHaveFirstAddedNotes(){
+	        MyNode<Integer>  myFirstNode = new MyNode(56);
 	        MyNode<Integer> mySecondNode = new MyNode(30);
-	        MyNode<Integer>  myThirdNode = new MyNode(56);
+	        MyNode<Integer>  myThirdNode = new MyNode(70);
 	        Stack myStack = new Stack();
-	        myStack.push(myFirstNode);
-	        myStack.push(mySecondNode);
-	        myStack.push(myThirdNode);
+	        myStack.enqueu(myFirstNode);
+	        myStack.enqueu(mySecondNode);
+	        myStack.enqueu(myThirdNode);
 	        myStack.printStack();
-	        while (!myStack.isEmpty()==true){
-	            myStack.peak();
-	            myStack.pop();
-	        }
-	        Assert.assertTrue(myStack.isEmpty());
+	        INode peak = myStack.peak();
+	        Assert.assertEquals(myFirstNode , peak);
 	    }
 	}
