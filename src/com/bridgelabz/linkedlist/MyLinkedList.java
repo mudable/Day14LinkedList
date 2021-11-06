@@ -68,6 +68,31 @@ public class MyLinkedList<T> {
 		return temp;
 	}
 
+	/*
+	 * Delete is used to delete specified node
+	 */
+	public INode delete(INode node) {
+		INode tempNode = this.head;
+		INode temp = null;
+		while (!tempNode.getNext().equals(node)) {
+			tempNode = tempNode.getNext();
+			temp = tempNode;
+		}
+		temp.setNext(node.getNext());
+		return temp.getNext();
+	}
+
+	public void size(INode node) {
+		INode tempNode = this.head;
+		int size = 1;
+		while (!tempNode.getNext().equals(node)) {
+			tempNode = tempNode.getNext();
+			size = size + 1;
+		}
+		System.out.println(size + 1);
+
+	}
+
 	public INode searchAndInsert(MyNode myNode, INode keyToInsert) {
 		INode tempNode = this.head;
 		INode temp = null;
@@ -99,4 +124,5 @@ public class MyLinkedList<T> {
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
+
 }
